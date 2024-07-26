@@ -11844,3 +11844,7 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body {
+  font-family: "Bitter", serif;
+  box-sizing: border-box;
+}
