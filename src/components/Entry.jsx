@@ -1,58 +1,63 @@
-import { Pane, Heading, Paragraph } from 'evergreen-ui'
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 
 function Entry(props){
 
     let entry = props.entry
-    console.log(entry)
+
+    // removing phonetics with empty audio URL
+    let pronunciations = entry?.phonetics?.filter((phonetic) => (
+        phonetic.audio.length > 0
+    ));
 
     return (
         entry?.word?.length ?
-        <>
-        <Pane className='test'>Test</Pane>
-        <Heading className='test'></Heading>
         <div className="container">
-        <Pane>
-            <Heading>Word: {entry?.word}</Heading>
-            <Heading>Phonetics</Heading>
-            {entry?.phonetics?.map((item, index) => 
-            <Pane key={index}>
-                <Paragraph>{index + 1}. {item.text}</Paragraph>
+            <h2 className="entry-heading">{entry?.word}</h2>
+            <h3 className="section-heading">Pronunciation</h3>
+            <ol className="pronunciations-list">
+            {pronunciations?.map((item, index) => 
+                <>
+                <li 
+                    key={index}
+                    className="pronunciation-item">
+                    {item.text}
+                </li>
                 <AudioPlayer
-                src={item?.audio}
-                onPlay={e => console.log("playing")}
+                    src={item?.audio}
+                    onPlay={e => console.log("playing")}
                 />
-            </Pane>
+                </>
             )}
-            <Heading>Meaning</Heading>
+            </ol>
+            <h3 className="section-heading">Meaning</h3>
             { entry?.meanings.map(({definitions, partOfSpeech, antonyms, synonyms}, index) => (
             <div key={index} className="meaning-grammar-group">
-                <h3>{partOfSpeech}</h3>
+                <h4>{partOfSpeech}</h4>
+                <ol className="meanings-list">
                 { definitions.map(({definition, example}, index) => (
                 <div key={index} className="meaning-item">
-                    <p>{index + 1}. {definition}</p>
+                    <li>{definition}</li>
                     { example ? <p>{example}</p> : ""}
                 </div>
                 ))}
-                { synonyms?.length ? <h4>Synonyms</h4> : "" }
+                </ol>
+                
+                { synonyms?.length ? <h5>Synonyms</h5> : "" }
                 {
                 synonyms?.map((synonym, index) => (
-                    <a key={index}>{`${synonym}, `}</a>
+                    <a key={index}>{`${synonym} `}</a>
                 ))
                 }
-                { antonyms?.length ? <h4>Antonyms</h4> : "" }
+                { antonyms?.length ? <h5>Antonyms</h5> : "" }
                 {
                 antonyms?.map((antonym, index) => (
-                    <a key={index}>{`${antonym}, `}</a>
+                    <a key={index}>{`${antonym} `}</a>
                 ))
                 }
             </div>
             ))}
-            
-        </Pane>
         </div>
-        </>
         :
         ""
     )
