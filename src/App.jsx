@@ -1,5 +1,5 @@
-import { Fragment, useState } from 'react'
-import { Button, TextInput, Pane, Heading, Paragraph } from 'evergreen-ui'
+import { useState } from 'react'
+import { Button, TextInput } from 'evergreen-ui'
 import Entry from './components/Entry';
 
 function App() {
