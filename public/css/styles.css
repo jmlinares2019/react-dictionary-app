@@ -11844,6 +11844,19 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.entry {
+  background-color: lightblue;
+}
+
+footer {
+  min-height: 100px;
+  background-color: lightgray;
+}
+
+div, header, section, main, footer {
+  border: 1px solid forestgreen;
+}
+
 body {
   font-family: "Bitter", serif;
   box-sizing: border-box;
