@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Button, TextInput } from 'evergreen-ui'
 import Entry from './components/Entry';
+import Footer from './components/Footer';
 
 function App() {
   
@@ -45,6 +46,8 @@ function App() {
       </Button>
 
       <Entry entry={entry}/>
+
+      <Footer />
 
     </div>
   )

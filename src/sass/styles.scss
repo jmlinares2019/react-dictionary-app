@@ -5,6 +5,13 @@
 
 // Then add additional custom code here
 
+@import "./components/entry";
+@import "./components/footer";
+
+div, header, section, main, footer{
+    border: 1px solid forestgreen;
+} 
+
 body{
     font-family: "Bitter", serif;
     box-sizing: border-box;

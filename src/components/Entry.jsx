@@ -12,52 +12,55 @@ function Entry(props){
 
     return (
         entry?.word?.length ?
-        <div className="container">
-            <h2 className="entry-heading">{entry?.word}</h2>
-            <h3 className="section-heading">Pronunciation</h3>
-            <ol className="pronunciations-list">
-            {pronunciations?.map((item, index) => 
-                <>
-                <li 
-                    key={index}
-                    className="pronunciation-item">
-                    {item.text}
-                </li>
-                <AudioPlayer
-                    src={item?.audio}
-                    onPlay={e => console.log("playing")}
-                />
-                </>
-            )}
-            </ol>
-            <h3 className="section-heading">Meaning</h3>
-            { entry?.meanings.map(({definitions, partOfSpeech, antonyms, synonyms}, index) => (
-            <div key={index} className="meaning-grammar-group">
-                <h4>{partOfSpeech}</h4>
-                <ol className="meanings-list">
-                { definitions.map(({definition, example}, index) => (
-                <div key={index} className="meaning-item">
-                    <li>{definition}</li>
-                    { example ? <p>{example}</p> : ""}
+        <div className="entry">
+            <div className="container">
+                <h2 className="entry-heading">{entry?.word}</h2>
+                <h3 className="section-heading">Pronunciation</h3>
+                <ol className="pronunciations-list">
+                {pronunciations?.map((item, index) => 
+                    <>
+                    <li 
+                        key={index}
+                        className="pronunciation-item">
+                        {item.text}
+                    </li>
+                    <AudioPlayer
+                        src={item?.audio}
+                        onPlay={e => console.log("playing")}
+                    />
+                    </>
+                )}
+                </ol>
+                <h3 className="section-heading">Meaning</h3>
+                { entry?.meanings.map(({definitions, partOfSpeech, antonyms, synonyms}, index) => (
+                <div key={index} className="meaning-grammar-group">
+                    <h4 className="grammar-group">{partOfSpeech}</h4>
+                    <ol className="meanings-list">
+                    { definitions.map(({definition, example}, index) => (
+                    <div key={index} className="meaning-item">
+                        <li>{definition}</li>
+                        { example ? <p>{example}</p> : ""}
+                    </div>
+                    ))}
+                    </ol>
+                    
+                    { synonyms?.length ? <h5 className="synonyms-heading">Synonyms</h5> : "" }
+                    {
+                    synonyms?.map((synonym, index) => (
+                        <a key={index}>{`${synonym} `}</a>
+                    ))
+                    }
+                    { antonyms?.length ? <h5 className="antonyms-heading">Antonyms</h5> : "" }
+                    {
+                    antonyms?.map((antonym, index) => (
+                        <a key={index}>{`${antonym} `}</a>
+                    ))
+                    }
                 </div>
                 ))}
-                </ol>
-                
-                { synonyms?.length ? <h5>Synonyms</h5> : "" }
-                {
-                synonyms?.map((synonym, index) => (
-                    <a key={index}>{`${synonym} `}</a>
-                ))
-                }
-                { antonyms?.length ? <h5>Antonyms</h5> : "" }
-                {
-                antonyms?.map((antonym, index) => (
-                    <a key={index}>{`${antonym} `}</a>
-                ))
-                }
             </div>
-            ))}
-        </div>
+        </div>    
+        
         :
         ""
     )
