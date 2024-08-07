@@ -39,28 +39,46 @@ function Entry(props){
                     { definitions.map(({definition, example}, index) => (
                     <div key={index} className="meaning-item">
                         <li>{definition}</li>
-                        { example ? <p>{example}</p> : ""}
+                        { example ?
+                        <div className="meaning-example" dangerouslySetInnerHTML={{__html: example.replaceAll(entry.word, `<span class="searched-word">${entry.word}</span>`)}} />
+                        : ""}
                     </div>
                     ))}
                     </ol>
                     
-                    { synonyms?.length ? <h5 className="synonyms-heading">Synonyms</h5> : "" }
+                    { synonyms?.length ?
+                    <> 
+                    <h5 className="synonyms-heading">Synonyms</h5> 
+                    <div className="synonyms-list">
                     {
                     synonyms?.map((synonym, index) => (
-                        <a key={index}>{`${synonym} `}</a>
+                        <div key={index} className="synonym-item">
+                            <span>{synonym}</span>
+                        </div>
                     ))
                     }
-                    { antonyms?.length ? <h5 className="antonyms-heading">Antonyms</h5> : "" }
+                    </div>
+                    </>
+                    : "" }
+                    
+                    { antonyms?.length ?
+                    <>
+                    <h5 className="antonyms-heading">Antonyms</h5>
+                    <div className="antonyms-list">
                     {
                     antonyms?.map((antonym, index) => (
-                        <a key={index}>{`${antonym} `}</a>
+                        <div key={index} className="antonym-item">
+                            <span>{antonym}</span>
+                        </div>
                     ))
                     }
+                    </div>
+                    </>
+                    : "" }
                 </div>
                 ))}
             </div>
-        </div>    
-        
+        </div>
         :
         ""
     )

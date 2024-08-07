@@ -1,3 +1,39 @@
 .entry{
     background-color: lightblue;
+
+    .meaning-item{
+        padding-top: 10px;
+
+        .meaning-example{
+            font-style: italic;
+    
+            .searched-word{
+                color: red;
+            }
+        }
+    }
+
+    .grammar-group,
+    .synonyms-heading,
+    .antonyms-heading{
+        margin-top: 20px;
+    }
+
+    .synonyms-list,
+    .antonyms-list{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .synonym-item,
+    .antonym-item{
+        margin: 0 .25rem .25rem 0;
+        padding: .25rem;
+        border: 1px solid black;
+        border-radius: .25rem;
+    }
+
+    
+
 }
+
