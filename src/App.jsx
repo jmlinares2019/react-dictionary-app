@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Button, TextInput } from 'evergreen-ui'
 import Entry from './components/Entry';
 import Footer from './components/Footer';
+import Sidebar from './components/Sidebar';
+import ScrollspyTest from './components/ScrollspyTest';
 
 function App() {
   
@@ -30,25 +32,31 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>Wiktionary</h1>
-
-      <TextInput 
-        placeholder="Search for a word"
-        onChange={handleInput} 
-        value={word} 
-      />
-      <Button 
-        appearance="primary"
-        onClick={searchWord}
-        isLoading={loading}
-        disabled={loading}>
-        Search
-      </Button>
-
-      <Entry entry={entry}/>
-
+      <div className="container">
+        <div className="row">
+          <div className="col-2">
+            <Sidebar entry={entry}/>
+          </div>
+          <div className="col-10">
+            <h1>Wiktionary</h1>
+            <TextInput 
+              placeholder="Search for a word"
+              onChange={handleInput} 
+              value={word} 
+            />
+            <Button 
+              appearance="primary"
+              onClick={searchWord}
+              isLoading={loading}
+              disabled={loading}>
+              Search
+            </Button>
+            {/* <ScrollspyTest /> */}
+            <Entry entry={entry}/>
+          </div>
+        </div>
+      </div>
       <Footer />
-
     </div>
   )
 }

@@ -12,7 +12,7 @@ function Entry(props){
 
     return (
         entry?.word?.length ?
-        <div className="entry">
+        <div id="entry">
             <div className="container">
                 <h2 className="entry-heading">{entry?.word}</h2>
                 <h3 className="section-heading">Pronunciation</h3>
@@ -33,8 +33,8 @@ function Entry(props){
                 </ol>
                 <h3 className="section-heading">Meaning</h3>
                 { entry?.meanings.map(({definitions, partOfSpeech, antonyms, synonyms}, index) => (
-                <div key={index} className="meaning-grammar-group">
-                    <h4 className="grammar-group">{partOfSpeech}</h4>
+                <div key={index} className="meaning-grammar-class">
+                    <h4 id={`grammar-class-${index +1}`} className="grammar-class">{partOfSpeech}</h4>
                     <ol className="meanings-list">
                     { definitions.map(({definition, example}, index) => (
                     <div key={index} className="meaning-item">
