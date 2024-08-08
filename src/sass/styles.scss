@@ -6,6 +6,7 @@
 // Then add additional custom code here
 
 @import "./components/entry";
+@import './components/sidebar';
 @import "./components/footer";
 
 div, header, section, main, footer{
@@ -15,4 +16,10 @@ div, header, section, main, footer{
 body{
     font-family: "Bitter", serif;
     box-sizing: border-box;
+    position: relative;
+}
+
+#list-example{
+    position: sticky;
+    top: 0;
 }

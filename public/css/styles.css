@@ -11844,34 +11844,40 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.entry {
+#entry {
+  position: relative;
   background-color: lightblue;
 }
-.entry .meaning-item {
+#entry .meaning-item {
   padding-top: 10px;
 }
-.entry .meaning-item .meaning-example {
+#entry .meaning-item .meaning-example {
   font-style: italic;
 }
-.entry .meaning-item .meaning-example .searched-word {
+#entry .meaning-item .meaning-example .searched-word {
   color: red;
 }
-.entry .grammar-group,
-.entry .synonyms-heading,
-.entry .antonyms-heading {
+#entry .grammar-class,
+#entry .synonyms-heading,
+#entry .antonyms-heading {
   margin-top: 20px;
 }
-.entry .synonyms-list,
-.entry .antonyms-list {
+#entry .synonyms-list,
+#entry .antonyms-list {
   display: flex;
   flex-wrap: wrap;
 }
-.entry .synonym-item,
-.entry .antonym-item {
+#entry .synonym-item,
+#entry .antonym-item {
   margin: 0 0.25rem 0.25rem 0;
   padding: 0.25rem;
   border: 1px solid black;
   border-radius: 0.25rem;
+}
+
+#sidebar {
+  position: sticky;
+  top: 0;
 }
 
 footer {
@@ -11886,4 +11892,9 @@ div, header, section, main, footer {
 body {
   font-family: "Bitter", serif;
   box-sizing: border-box;
+}
+
+#list-example {
+  position: sticky;
+  top: 0;
 }
