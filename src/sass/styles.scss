@@ -5,6 +5,7 @@
 
 // Then add additional custom code here
 
+@import "./components/navbar";
 @import "./components/entry";
 @import './components/sidebar';
 @import "./components/footer";
@@ -17,6 +18,19 @@ body{
     font-family: "Bitter", serif;
     box-sizing: border-box;
     position: relative;
+}
+
+.app{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    .global-wrapper{
+        margin: {
+            top: 20px;
+            bottom: 20px;
+        }
+    }
 }
 
 #list-example{
