@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Button, TextInput } from 'evergreen-ui'
+// import { Button, TextInput } from 'evergreen-ui'
+import Navbar from './components/Navbar'
 import Entry from './components/Entry';
 import NoEntry from './components/NoEntry';
 import Footer from './components/Footer';
@@ -47,21 +48,12 @@ function App() {
             <Sidebar result={result}/>
           </div>
           <div className="col-10">
-            <nav className="searchbar">
-              <h1>Wiktionary</h1>
-              <TextInput 
-                placeholder="Search for a word"
-                onChange={handleInput} 
-                value={word} 
-              />
-              <Button 
-                appearance="primary"
-                onClick={searchWord}
-                isLoading={loading}
-                disabled={loading}>
-                Search
-              </Button>
-            </nav>
+            <Navbar 
+              handleChange={handleInput} 
+              handleSearch={searchWord}
+              word={word}
+              loading={loading}
+            />
             {/* <ScrollspyTest /> */}
             {result.message ? 
             <NoEntry result={result} /> 
