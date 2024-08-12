@@ -1,13 +1,30 @@
 .navbar{
     display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     
-    .searchbar{
-        display: flex;
-        justify-content: end;
+    background-color: black;
 
-        .search-btn{
-            min-width: auto !important;
-            margin-left: 5px;
+
+    .navbar-wrapper{
+        width: 100%;
+        align-items: center;
+
+        .title{
+            color: white;
+        }
+        
+        .searchbar{
+            display: flex;
+            justify-content: end;
+    
+            .search-btn{
+                min-width: auto !important;
+                margin-left: 5px;
+            }
         }
     }
+
+    
 }

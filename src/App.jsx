@@ -42,18 +42,18 @@ function App() {
 
   return (
     <div className="app">
-      <div className="global-wrapper container">
+      <Navbar 
+        handleChange={handleInput} 
+        handleSearch={searchWord}
+        word={word}
+        loading={loading}
+      />
+      <div className="container-md main-wrapper">
         <div className="row">
-          <div className="col-2">
+          <div className="col-md-2 sidebar-wrapper">
             <Sidebar result={result}/>
           </div>
-          <div className="col-10">
-            <Navbar 
-              handleChange={handleInput} 
-              handleSearch={searchWord}
-              word={word}
-              loading={loading}
-            />
+          <div className="col-md-10 entry-wrapper">
             {/* <ScrollspyTest /> */}
             {result.message ? 
             <NoEntry result={result} /> 

@@ -1,4 +1,18 @@
 #sidebar{
     position: sticky;
-    top: 0;
+    top: 100px;
+
+    padding-top: 10px;
+    border-radius: 0;
+
+    @include tablet-down{
+        flex-direction: row;
+        box-shadow: 2px 2px 20px #ccccccb0;
+    }
+
+    .list-group-item{
+        @include tablet-down{
+            border-top: 0;
+        }
+    }
 }
