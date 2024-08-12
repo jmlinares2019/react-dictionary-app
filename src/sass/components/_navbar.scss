@@ -4,5 +4,10 @@
     .searchbar{
         display: flex;
         justify-content: end;
+
+        .search-btn{
+            min-width: auto !important;
+            margin-left: 5px;
+        }
     }
 }

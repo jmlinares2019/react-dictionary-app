@@ -14,6 +14,7 @@ function Navbar(props){
                     value={props.word} 
                 />
                 <Button 
+                    className="search-btn"
                     appearance="primary"
                     onClick={props.handleSearch}
                     isLoading={props.loading}
