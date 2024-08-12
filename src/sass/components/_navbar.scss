@@ -3,8 +3,8 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    
-    background-color: black;
+
+    background-color: $black;
 
 
     .navbar-wrapper{
@@ -22,6 +22,7 @@
             .search-btn{
                 min-width: auto !important;
                 margin-left: 5px;
+                background-color: $blue;
             }
         }
     }

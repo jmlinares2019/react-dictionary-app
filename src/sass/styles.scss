@@ -6,16 +6,18 @@
 // Then add additional custom code here
 
 // Abstracts
+@import "./abstracts/variables";
 @import "./abstracts/mixins";
 
 // Components
 @import "./components/navbar";
 @import "./components/entry";
+@import "./components/pronunciations";
 @import './components/sidebar';
 @import "./components/footer";
 
 div, header, section, main, footer{
-    // border: 1px solid forestgreen;
+    border: 1px solid forestgreen;
 } 
 
 body{

@@ -1,7 +1,6 @@
 [id^="entry-"]{
     position: relative;
     margin-top: 20px;
-    // background-color: lightblue;
 
     .meaning-item{
         padding-top: 10px;
@@ -10,9 +9,13 @@
             font-style: italic;
     
             .searched-word{
-                color: red;
+                border-bottom: dashed;
             }
         }
+    }
+
+    .grammar-class{
+        color: $blue;
     }
 
     .grammar-class,
