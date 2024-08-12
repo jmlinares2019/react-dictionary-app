@@ -11846,37 +11846,52 @@ textarea.form-control-lg {
 }
 .navbar {
   display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: black;
 }
-.navbar .searchbar {
+.navbar .navbar-wrapper {
+  width: 100%;
+  align-items: center;
+}
+.navbar .navbar-wrapper .title {
+  color: white;
+}
+.navbar .navbar-wrapper .searchbar {
   display: flex;
   justify-content: end;
 }
+.navbar .navbar-wrapper .searchbar .search-btn {
+  min-width: auto !important;
+  margin-left: 5px;
+}
 
-#entry {
+[id^=entry-] {
   position: relative;
   margin-top: 20px;
 }
-#entry .meaning-item {
+[id^=entry-] .meaning-item {
   padding-top: 10px;
 }
-#entry .meaning-item .meaning-example {
+[id^=entry-] .meaning-item .meaning-example {
   font-style: italic;
 }
-#entry .meaning-item .meaning-example .searched-word {
+[id^=entry-] .meaning-item .meaning-example .searched-word {
   color: red;
 }
-#entry .grammar-class,
-#entry .synonyms-heading,
-#entry .antonyms-heading {
+[id^=entry-] .grammar-class,
+[id^=entry-] .synonyms-heading,
+[id^=entry-] .antonyms-heading {
   margin-top: 20px;
 }
-#entry .synonyms-list,
-#entry .antonyms-list {
+[id^=entry-] .synonyms-list,
+[id^=entry-] .antonyms-list {
   display: flex;
   flex-wrap: wrap;
 }
-#entry .synonym-item,
-#entry .antonym-item {
+[id^=entry-] .synonym-item,
+[id^=entry-] .antonym-item {
   margin: 0 0.25rem 0.25rem 0;
   padding: 0.25rem;
   border: 1px solid black;
@@ -11885,17 +11900,26 @@ textarea.form-control-lg {
 
 #sidebar {
   position: sticky;
-  top: 0;
+  top: 100px;
+  padding-top: 10px;
+  border-radius: 0;
+}
+@media screen and (max-width: 768px) {
+  #sidebar {
+    flex-direction: row;
+    box-shadow: 2px 2px 20px rgba(204, 204, 204, 0.6901960784);
+  }
+}
+@media screen and (max-width: 768px) {
+  #sidebar .list-group-item {
+    border-top: 0;
+  }
 }
 
 footer {
   margin-top: auto;
   min-height: 100px;
   background-color: lightgray;
-}
-
-div, header, section, main, footer {
-  border: 1px solid forestgreen;
 }
 
 body {
@@ -11909,9 +11933,18 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-.app .global-wrapper {
-  margin-top: 20px;
+.app .main-wrapper {
   margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .app .main-wrapper {
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .app .main-wrapper .sidebar-wrapper {
+    padding: 0;
+  }
 }
 
 #list-example {
