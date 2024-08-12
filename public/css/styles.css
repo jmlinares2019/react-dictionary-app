@@ -11849,7 +11849,7 @@ textarea.form-control-lg {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: black;
+  background-color: #1c2333;
 }
 .navbar .navbar-wrapper {
   width: 100%;
@@ -11865,6 +11865,7 @@ textarea.form-control-lg {
 .navbar .navbar-wrapper .searchbar .search-btn {
   min-width: auto !important;
   margin-left: 5px;
+  background-color: #3d8bff;
 }
 
 [id^=entry-] {
@@ -11878,7 +11879,10 @@ textarea.form-control-lg {
   font-style: italic;
 }
 [id^=entry-] .meaning-item .meaning-example .searched-word {
-  color: red;
+  border-bottom: dashed;
+}
+[id^=entry-] .grammar-class {
+  color: #3d8bff;
 }
 [id^=entry-] .grammar-class,
 [id^=entry-] .synonyms-heading,
@@ -11898,6 +11902,26 @@ textarea.form-control-lg {
   border-radius: 0.25rem;
 }
 
+@media screen and (min-width: 992px) {
+  .pronunciations {
+    order: 2;
+  }
+}
+.pronunciations .card {
+  padding: 10px;
+  background-color: #ededed;
+  border: none;
+}
+.pronunciations .card .pronunciations-list {
+  padding-left: 1rem;
+}
+.pronunciations .card .pronunciations-list .pronunciation-item {
+  margin-bottom: 10px;
+}
+.pronunciations .card .pronunciations-list .pronunciation-item .rhap_controls-section {
+  flex-wrap: wrap;
+}
+
 #sidebar {
   position: sticky;
   top: 100px;
@@ -11910,6 +11934,9 @@ textarea.form-control-lg {
     box-shadow: 2px 2px 20px rgba(204, 204, 204, 0.6901960784);
   }
 }
+#sidebar .list-group-item {
+  color: #3d8bff;
+}
 @media screen and (max-width: 768px) {
   #sidebar .list-group-item {
     border-top: 0;
@@ -11920,6 +11947,10 @@ footer {
   margin-top: auto;
   min-height: 100px;
   background-color: lightgray;
+}
+
+div, header, section, main, footer {
+  border: 1px solid forestgreen;
 }
 
 body {
