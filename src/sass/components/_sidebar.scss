@@ -11,6 +11,7 @@
     }
 
     .list-group-item{
+        color: $blue;
         @include tablet-down{
             border-top: 0;
         }
