@@ -7,8 +7,8 @@ function Entry(props){
 
     return (
         result?.length ?
-            result.map((entry) => (
-                <div id="entry">
+            result.map((entry, index) => (
+                <div id={`entry-${index +1}`}>
                     <div className="container">
                         <h2 className="entry-heading">{entry?.word}</h2>
                         <h3 className="section-heading">Pronunciation</h3>
