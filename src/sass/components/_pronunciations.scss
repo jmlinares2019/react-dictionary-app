@@ -1,0 +1,23 @@
+.pronunciations{
+    @include desktop-up{
+        order: 2;
+    }
+
+    .card{
+        padding: 10px;
+        background-color:$lightgrey;
+        border: none;
+
+        .pronunciations-list{
+            padding-left: 1rem;
+
+            .pronunciation-item{
+                margin-bottom: 10px;
+
+                .rhap_controls-section{
+                    flex-wrap: wrap;
+                }
+            }
+        }
+    } 
+}

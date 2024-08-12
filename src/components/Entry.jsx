@@ -1,5 +1,4 @@
-import AudioPlayer from 'react-h5-audio-player';
-import 'react-h5-audio-player/lib/styles.css';
+import Pronunciations from "./Pronunciations"
 
 function Entry(props){
 
@@ -12,27 +11,13 @@ function Entry(props){
                     <div className="container">
                         <h2 className="entry-heading">{entry?.word}</h2>
                         <div className="row">
+                            {entry.phonetics ? 
                             <div className="col-lg-4 pronunciations">
-                                <div className="card">
-                                    <h3 className="section-heading">Pronunciation</h3>
-                                    <ol className="pronunciations-list">
-                                    {entry.phonetics.map((item, index) => (
-                                        <div className="pronunciation-item">
-                                        <li 
-                                            key={index}
-                                            className="pronunciation-transcription">
-                                            {item.text}
-                                        </li>
-                                        <AudioPlayer 
-                                            className="pronunciation-audio"
-                                            src={item?.audio}
-                                            onPlay={e => console.log("playing")}
-                                        />
-                                        </div>
-                                    ))}
-                                    </ol>
-                                </div>
+                                <Pronunciations entry={entry} />
                             </div>
+                            : 
+                            ""
+                            }
                             <div className="col-lg-8 meanings-etc">
                                 <h3 className="section-heading visually-hidden">Meanings</h3>
                                 { entry?.meanings.map(({definitions, partOfSpeech, antonyms, synonyms}, index) => (
