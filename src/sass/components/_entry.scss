@@ -3,6 +3,25 @@
     margin-top: 20px;
     // background-color: lightblue;
 
+    .pronunciations{
+        @include desktop-up{
+            order: 2;
+        }
+
+        .card{
+            padding: 10px;
+            background-color: lightgray;
+
+            .pronunciations-list{
+                padding-left: 1rem;
+
+                .pronunciation-item{
+                    margin-bottom: 10px;
+                }
+            }
+        } 
+    }
+
     .meaning-item{
         padding-top: 10px;
 
