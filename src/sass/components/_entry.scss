@@ -1,6 +1,7 @@
-#entry{
+[id^="entry-"]{
     position: relative;
-    background-color: lightblue;
+    margin-top: 20px;
+    // background-color: lightblue;
 
     .meaning-item{
         padding-top: 10px;

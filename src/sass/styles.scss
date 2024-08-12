@@ -5,18 +5,43 @@
 
 // Then add additional custom code here
 
+// Abstracts
+@import "./abstracts/mixins";
+
+// Components
+@import "./components/navbar";
 @import "./components/entry";
 @import './components/sidebar';
 @import "./components/footer";
 
 div, header, section, main, footer{
-    border: 1px solid forestgreen;
+    // border: 1px solid forestgreen;
 } 
 
 body{
     font-family: "Bitter", serif;
     box-sizing: border-box;
     position: relative;
+}
+
+.app{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    .main-wrapper{
+        margin-bottom: 20px;
+        
+        @include tablet-up{
+            margin-top: 20px;
+        }
+
+        .sidebar-wrapper{
+            @include tablet-down{
+                padding: 0;
+            }
+        }
+    }
 }
 
 #list-example{
