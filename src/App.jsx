@@ -54,12 +54,12 @@ function App() {
             <Sidebar result={result}/>
           </div>
           <div className="col-md-10 entry-wrapper">
-            {/* <ScrollspyTest /> */}
-            {result.message ? 
+          {/* <ScrollspyTest /> */}
+          {result.message ? 
             <NoEntry result={result} /> 
-            :  
+          :  
             <Entry result={result} />
-            }
+          }
           </div>
         </div>
       </div>
