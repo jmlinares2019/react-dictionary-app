@@ -1,6 +1,6 @@
 import { useState } from 'react'
-// import { Button, TextInput } from 'evergreen-ui'
 import Navbar from './components/Navbar'
+import Home from './components/Home'
 import Entry from './components/Entry';
 import NoEntry from './components/NoEntry';
 import Footer from './components/Footer';
@@ -12,7 +12,6 @@ function App() {
   
   const [word, setWord] = useState("")
   const [loading, setLoading] = useState(false)
-  // const [result, setResult] = useState({})
   const [result, setResult] = useState([])
 
   function handleInput(e){
@@ -49,7 +48,9 @@ function App() {
         loading={loading}
       />
       <div className="container-md main-wrapper">
-        <div className="row">
+        <div className="row justify-content-center">
+        { result.length ?
+          <>
           <div className="col-md-2 sidebar-wrapper">
             <Sidebar result={result}/>
           </div>
@@ -61,6 +62,10 @@ function App() {
             <Entry result={result} />
           }
           </div>
+          </>
+          :
+          <Home />
+        }
         </div>
       </div>
       <Footer />
