@@ -6,18 +6,22 @@
 
     background-color: $black;
 
-
     .navbar-wrapper{
         width: 100%;
         align-items: center;
 
-        .title{
+        .title a{
             color: white;
+            text-decoration: none;
         }
         
         .searchbar{
             display: flex;
-            justify-content: end;
+            justify-content: start;
+
+            @include phone-up{
+                justify-content: end;
+            }
     
             .search-btn{
                 min-width: auto !important;
