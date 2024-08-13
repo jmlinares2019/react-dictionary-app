@@ -3,13 +3,18 @@ import 'react-h5-audio-player/lib/styles.css';
 
 function Pronunciations(props){
     
-    let entry = props.entry; 
+    let entry = props.entry;
+
+    let pronunciations = entry?.phonetics?.filter((phonetic) => (
+        phonetic.audio.length > 0
+    ));
 
     return (
+        pronunciations.length ?
         <div className="card">
             <h4 className="section-heading">Pronunciation</h4>
             <ol className="pronunciations-list">
-            {entry.phonetics.map((item, index) => (
+            {pronunciations.map((item, index) => (
                 <div className="pronunciation-item">
                 <li 
                     key={index}
@@ -25,6 +30,8 @@ function Pronunciations(props){
             ))}
             </ol>
         </div>
+        :
+        ""
     )
 }
 
