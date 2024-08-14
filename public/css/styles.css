@@ -11849,6 +11849,7 @@ textarea.form-control-lg {
   position: sticky;
   top: 0;
   z-index: 1000;
+  min-height: 70px;
   background-color: #1c2333;
 }
 .navbar .navbar-wrapper {
@@ -11856,16 +11857,48 @@ textarea.form-control-lg {
   align-items: center;
 }
 .navbar .navbar-wrapper .title {
+  margin-bottom: 0;
+}
+.navbar .navbar-wrapper .title a {
   color: white;
+  text-decoration: none;
 }
 .navbar .navbar-wrapper .searchbar {
   display: flex;
-  justify-content: end;
+  justify-content: start;
+}
+@media screen and (min-width: 576px) {
+  .navbar .navbar-wrapper .searchbar {
+    justify-content: end;
+  }
+}
+@media screen and (max-width: 576px) {
+  .navbar .navbar-wrapper .searchbar {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }
 .navbar .navbar-wrapper .searchbar .search-btn {
   min-width: auto !important;
   margin-left: 5px;
-  background-color: #3d8bff;
+  font-size: medium;
+  font-weight: 400;
+  background-color: #d76d6d;
+  border: none;
+}
+
+#home {
+  margin-top: 30px;
+}
+#home .wiki-logo {
+  width: 85%;
+  margin: auto;
+  display: block;
+}
+@media screen and (max-width: 992px) {
+  #home .wiki-logo {
+    width: 45%;
+  }
 }
 
 [id^=entry-] {
@@ -11880,9 +11913,10 @@ textarea.form-control-lg {
 }
 [id^=entry-] .meaning-item .meaning-example .searched-word {
   border-bottom: dashed;
+  border-color: #ededed;
 }
 [id^=entry-] .grammar-class {
-  color: #3d8bff;
+  color: #d76d6d;
 }
 [id^=entry-] .grammar-class,
 [id^=entry-] .synonyms-heading,
@@ -11898,8 +11932,32 @@ textarea.form-control-lg {
 [id^=entry-] .antonym-item {
   margin: 0 0.25rem 0.25rem 0;
   padding: 0.25rem;
-  border: 1px solid black;
-  border-radius: 0.25rem;
+}
+[id^=entry-] .synonym-item::after,
+[id^=entry-] .antonym-item::after {
+  content: "|";
+  display: inline;
+  margin-left: 0.5rem;
+  color: #ededed;
+}
+
+#no-entry {
+  padding-top: 50px;
+}
+#no-entry .error-message {
+  font-size: larger;
+  font-weight: bold;
+}
+#no-entry .wiki-logo {
+  width: 85%;
+  margin: auto;
+  display: block;
+  filter: opacity(0.3) grayscale(1);
+}
+@media screen and (max-width: 992px) {
+  #no-entry .wiki-logo {
+    width: 45%;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -11918,6 +11976,9 @@ textarea.form-control-lg {
 .pronunciations .card .pronunciations-list .pronunciation-item {
   margin-bottom: 10px;
 }
+.pronunciations .card .pronunciations-list .pronunciation-item .pronunciation-transcription {
+  margin-bottom: 5px;
+}
 .pronunciations .card .pronunciations-list .pronunciation-item .rhap_controls-section {
   flex-wrap: wrap;
 }
@@ -11926,19 +11987,22 @@ textarea.form-control-lg {
   position: sticky;
   top: 100px;
   padding-top: 10px;
-  border-radius: 0;
 }
 @media screen and (max-width: 768px) {
   #sidebar {
-    flex-direction: row;
     box-shadow: 2px 2px 20px rgba(204, 204, 204, 0.6901960784);
   }
 }
-#sidebar .list-group-item {
-  color: #3d8bff;
+#sidebar .list-group {
+  border-radius: 0;
+}
+#sidebar .list-group .list-group-item {
+  color: #d76d6d;
+  border: none;
+  border-bottom: 1px solid #ededed;
 }
 @media screen and (max-width: 768px) {
-  #sidebar .list-group-item {
+  #sidebar .list-group .list-group-item {
     border-top: 0;
   }
 }
@@ -11946,23 +12010,24 @@ textarea.form-control-lg {
 footer {
   margin-top: auto;
   min-height: 100px;
-  background-color: lightgray;
-}
-
-div, header, section, main, footer {
-  border: 1px solid forestgreen;
+  padding: 20px 0;
+  background-color: #ededed;
 }
 
 body {
   font-family: "Bitter", serif;
   box-sizing: border-box;
   position: relative;
+  height: 100%;
 }
 
 .app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+.app a {
+  color: #d76d6d;
 }
 .app .main-wrapper {
   margin-bottom: 20px;
