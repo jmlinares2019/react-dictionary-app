@@ -1,0 +1,14 @@
+#home{
+    margin-top: 30px;
+
+    .wiki-logo{
+        width: 85%;
+        margin: auto;
+        display: block;
+
+        @include desktop-down{
+            width: 45%;
+        }
+    }
+}
+

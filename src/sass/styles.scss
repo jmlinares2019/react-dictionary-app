@@ -11,13 +11,15 @@
 
 // Components
 @import "./components/navbar";
+@import "./components/home";
 @import "./components/entry";
+@import "./components/no-entry";
 @import "./components/pronunciations";
 @import './components/sidebar';
 @import "./components/footer";
 
 div, header, section, main, footer{
-    // border: 1px solid forestgreen;
+    // border: 1px solid greenyellow;
 } 
 
 body{
