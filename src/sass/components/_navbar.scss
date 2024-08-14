@@ -3,6 +3,7 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    min-height: 70px;
 
     background-color: $black;
 
@@ -10,10 +11,14 @@
         width: 100%;
         align-items: center;
 
-        .title a{
-            color: white;
-            text-decoration: none;
-        }
+        .title{
+            margin-bottom: 0;
+
+            a{
+                color: white;
+                text-decoration: none;
+            }
+        } 
         
         .searchbar{
             display: flex;
@@ -21,6 +26,10 @@
 
             @include phone-up{
                 justify-content: end;
+            }
+
+            @include phone-down{
+                margin-top: 10px;
             }
     
             .search-btn{
