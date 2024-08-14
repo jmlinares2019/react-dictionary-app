@@ -54,10 +54,10 @@ function App() {
             :
             result.length > 0 ?
             <>
-              <div className="col-md-2 sidebar-wrapper">
+              <div className="col-md-3 col-lg-2 sidebar-wrapper">
                 <Sidebar result={result}/>
               </div>
-              <div className="col-md-10 entry-wrapper">
+              <div className="col-md-9 col-lg-10 entry-wrapper">
                 <Entry result={result} />
               </div>
             </>

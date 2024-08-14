@@ -29,13 +29,19 @@
             }
 
             @include phone-down{
-                margin-top: 10px;
+                margin:{
+                    top: 10px;
+                    bottom: 10px;
+                }
             }
     
             .search-btn{
                 min-width: auto !important;
                 margin-left: 5px;
-                background-color: $blue;
+                font-size: medium;
+                font-weight: 400;
+                background-color: $themeColor;
+                border: none;
             }
         }
     }
