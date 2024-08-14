@@ -2,7 +2,7 @@ import Pronunciations from "./Pronunciations"
 
 function Entry(props){
 
-    let result = props.result
+    let result = props.result;
 
     return (
         result?.length ?
@@ -11,14 +11,10 @@ function Entry(props){
                     <div className="container">
                         <h2 className="entry-heading">{entry?.word}</h2>
                         <div className="row">
-                            {entry.phonetics ? 
-                            <div className="col-lg-4 pronunciations">
+                            <div className="col-lg-5 pronunciations">
                                 <Pronunciations entry={entry} />
                             </div>
-                            : 
-                            ""
-                            }
-                            <div className="col-lg-8 meanings-etc">
+                            <div className="col-lg-7 meanings-etc">
                                 <h3 className="section-heading visually-hidden">Meanings</h3>
                                 { entry?.meanings.map(({definitions, partOfSpeech, antonyms, synonyms}, index) => (
                                     <div key={index} className="meaning-grammar-class">

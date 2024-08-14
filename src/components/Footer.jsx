@@ -9,7 +9,7 @@ function Footer(){
                     <p>{year} - Juan Manuel Linares</p>
                 </div>
                 <div className="credits">
-                <p>Results provided by<a href="https://dictionaryapi.dev/">Free Dictionary API</a></p> 
+                <p>Results provided by <a href="https://dictionaryapi.dev/">Free Dictionary API</a></p> 
                 </div>
             </div>
         

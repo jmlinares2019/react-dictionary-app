@@ -1,6 +1,6 @@
 import { useState } from 'react'
-// import { Button, TextInput } from 'evergreen-ui'
 import Navbar from './components/Navbar'
+import Home from './components/Home'
 import Entry from './components/Entry';
 import NoEntry from './components/NoEntry';
 import Footer from './components/Footer';
@@ -12,7 +12,6 @@ function App() {
   
   const [word, setWord] = useState("")
   const [loading, setLoading] = useState(false)
-  // const [result, setResult] = useState({})
   const [result, setResult] = useState([])
 
   function handleInput(e){
@@ -49,18 +48,22 @@ function App() {
         loading={loading}
       />
       <div className="container-md main-wrapper">
-        <div className="row">
-          <div className="col-md-2 sidebar-wrapper">
-            <Sidebar result={result}/>
-          </div>
-          <div className="col-md-10 entry-wrapper">
-            {/* <ScrollspyTest /> */}
-            {result.message ? 
-            <NoEntry result={result} /> 
-            :  
-            <Entry result={result} />
-            }
-          </div>
+        <div className="row justify-content-center">
+        { result.message ?
+            <NoEntry result={result} />
+            :
+            result.length > 0 ?
+            <>
+              <div className="col-md-3 col-lg-2 sidebar-wrapper">
+                <Sidebar result={result}/>
+              </div>
+              <div className="col-md-9 col-lg-10 entry-wrapper">
+                <Entry result={result} />
+              </div>
+            </>
+            :
+            <Home />
+        }
         </div>
       </div>
       <Footer />
@@ -69,6 +72,8 @@ function App() {
 }
 
 export default App
+
+{/* <ScrollspyTest /> */} 
 
 
 

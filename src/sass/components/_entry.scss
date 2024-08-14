@@ -10,12 +10,13 @@
     
             .searched-word{
                 border-bottom: dashed;
+                border-color: $lightgrey;
             }
         }
     }
 
     .grammar-class{
-        color: $blue;
+        color: $themeColor;
     }
 
     .grammar-class,
@@ -34,8 +35,13 @@
     .antonym-item{
         margin: 0 .25rem .25rem 0;
         padding: .25rem;
-        border: 1px solid black;
-        border-radius: .25rem;
+
+        &::after{
+            content: "|";
+            display: inline;
+            margin-left: .5rem;
+            color: $lightgrey;
+        }
     }
 
     

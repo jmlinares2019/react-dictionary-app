@@ -1,0 +1,19 @@
+#no-entry{
+    padding-top: 50px;
+
+    .error-message{
+        font-size: larger;
+        font-weight: bold;
+    }
+
+    .wiki-logo{
+        width: 85%;
+        margin: auto;
+        display: block;
+        filter: opacity(0.3) grayscale(1);
+
+        @include desktop-down{
+            width: 45%;
+        }
+    }
+}

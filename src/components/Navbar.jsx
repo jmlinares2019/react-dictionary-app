@@ -5,10 +5,12 @@ function Navbar(props){
         <nav className="navbar">
             <div className="container-md">
                 <div className="row navbar-wrapper">
-                    <div className="col-6">
-                        <h1 className="title">Wiktionary</h1>
+                    <div className="col-sm-6">
+                        <h1 className="title">
+                            <a href="/">Wiktionary</a>
+                        </h1>
                     </div>
-                    <div className="col-6 searchbar">
+                    <div className="col-sm-6 searchbar">
                         <TextInput 
                             placeholder="Search for a word"
                             onChange={props.handleChange} 

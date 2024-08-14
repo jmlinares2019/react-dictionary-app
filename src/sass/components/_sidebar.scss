@@ -3,17 +3,22 @@
     top: 100px;
 
     padding-top: 10px;
-    border-radius: 0;
 
     @include tablet-down{
-        flex-direction: row;
         box-shadow: 2px 2px 20px #ccccccb0;
     }
+    
+    .list-group{
+        border-radius: 0;
 
-    .list-group-item{
-        color: $blue;
-        @include tablet-down{
-            border-top: 0;
+        .list-group-item{
+            color: $themeColor;
+            border: none;
+            border-bottom: 1px solid $lightgrey; 
+    
+            @include tablet-down{
+                border-top: 0;
+            }
         }
-    }
+    } 
 }
