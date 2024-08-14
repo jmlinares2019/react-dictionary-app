@@ -49,22 +49,20 @@ function App() {
       />
       <div className="container-md main-wrapper">
         <div className="row justify-content-center">
-        { result.length ?
-          <>
-          <div className="col-md-2 sidebar-wrapper">
-            <Sidebar result={result}/>
-          </div>
-          <div className="col-md-10 entry-wrapper">
-          {/* <ScrollspyTest /> */}
-          {result.message ? 
-            <NoEntry result={result} /> 
-          :  
-            <Entry result={result} />
-          }
-          </div>
-          </>
-          :
-          <Home />
+        { result.message ?
+            <NoEntry result={result} />
+            :
+            result.length > 0 ?
+            <>
+              <div className="col-md-2 sidebar-wrapper">
+                <Sidebar result={result}/>
+              </div>
+              <div className="col-md-10 entry-wrapper">
+                <Entry result={result} />
+              </div>
+            </>
+            :
+            <Home />
         }
         </div>
       </div>
@@ -74,6 +72,8 @@ function App() {
 }
 
 export default App
+
+{/* <ScrollspyTest /> */} 
 
 
 
