@@ -4,4 +4,4 @@ Welcome to my Wiktionary project! This app is built using React over [Vite](http
 
 Please be my guest and use the top right searchbar to search for words to get their different meanings, pronunciations, synonyms and antonyms (if available from the API).
 
-![Wiktionary logo](img/wiktionary_small.svg.png)
+![Wiktionary logo](public/img/wiktionary_small.svg.png)
