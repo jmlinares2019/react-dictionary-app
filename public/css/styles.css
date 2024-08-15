@@ -12018,31 +12018,34 @@ footer {
   background-color: #ededed;
 }
 
-body {
+html {
+  scroll-padding-top: 80px; /* ∼ height of sticky header */
+}
+html body {
   font-family: "Bitter", serif;
   box-sizing: border-box;
   position: relative;
   height: 100%;
+  overflow-y: auto;
 }
-
-.app {
+html .app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-.app a {
+html .app a {
   color: #d76d6d;
 }
-.app .main-wrapper {
+html .app .main-wrapper {
   margin-bottom: 20px;
 }
 @media screen and (min-width: 768px) {
-  .app .main-wrapper {
+  html .app .main-wrapper {
     margin-top: 20px;
   }
 }
 @media screen and (max-width: 768px) {
-  .app .main-wrapper .sidebar-wrapper {
+  html .app .main-wrapper .sidebar-wrapper {
     padding: 0;
   }
 }
