@@ -11905,6 +11905,10 @@ textarea.form-control-lg {
   position: relative;
   margin-top: 20px;
 }
+[id^=entry-] .source-link {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+}
 [id^=entry-] .meaning-item {
   padding-top: 10px;
 }
