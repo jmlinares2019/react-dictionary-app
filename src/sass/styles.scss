@@ -22,37 +22,43 @@ div, header, section, main, footer{
     // border: 1px solid greenyellow;
 } 
 
-body{
-    font-family: "Bitter", serif;
-    box-sizing: border-box;
-    position: relative;
-    height: 100%;
-}
+html{
+    scroll-padding-top: 80px; /* ∼ height of sticky header */
 
-.app{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-
-    a{
-        color: $themeColor;
+    body{
+        font-family: "Bitter", serif;
+        box-sizing: border-box;
+        position: relative;
+        height: 100%;
+        overflow-y: auto;
     }
-
-    .main-wrapper{
-        margin-bottom: 20px;
-        
-        @include tablet-up{
-            margin-top: 20px;
+    
+    .app{
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    
+        a{
+            color: $themeColor;
         }
-
-        .sidebar-wrapper{
-            @include tablet-down{
-                padding: 0;
+    
+        .main-wrapper{
+            margin-bottom: 20px;
+            
+            @include tablet-up{
+                margin-top: 20px;
+            }
+    
+            .sidebar-wrapper{
+                @include tablet-down{
+                    padding: 0;
+                }
             }
         }
     }
 }
 
+// for testing purposes 
 #list-example{
     position: sticky;
     top: 0;

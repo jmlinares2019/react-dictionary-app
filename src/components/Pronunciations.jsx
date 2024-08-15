@@ -15,17 +15,18 @@ function Pronunciations(props){
             <h4 className="section-heading">Pronunciation</h4>
             <ol className="pronunciations-list">
             {pronunciations.map((item, index) => (
-                <div className="pronunciation-item">
-                <li 
-                    key={index}
-                    className="pronunciation-transcription">
-                    {item.text}
-                </li>
-                <AudioPlayer 
-                    className="pronunciation-audio"
-                    src={item?.audio}
-                    onPlay={e => console.log("playing")}
-                />
+                <div
+                    key={index} 
+                    className="pronunciation-item">
+                    <li
+                        className="pronunciation-transcription">
+                        {item.text}
+                    </li>
+                    <AudioPlayer 
+                        className="pronunciation-audio"
+                        src={item?.audio}
+                        onPlay={e => console.log("playing")}
+                    />
                 </div>
             ))}
             </ol>
